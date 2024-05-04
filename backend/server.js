@@ -27,7 +27,7 @@ app.use(cors());
 
 const componentSchema = new mongoose.Schema({
   componentId: {
-    type: Number,
+    type: String,
     required: true
   },
   name: {

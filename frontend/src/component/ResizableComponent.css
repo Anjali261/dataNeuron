@@ -7,7 +7,7 @@
     border: 1px solid #ccc;
     overflow: hidden;
     display: flex; 
-    flex-direction: column; 
+    flex-direction: row; 
   }
   
   .resizer {
@@ -42,7 +42,6 @@
     cursor: nesw-resize;
   }
   
-  /* Button styling */
   .resizer-button {
     margin: 5px;
     padding: 8px 12px;
@@ -57,7 +56,6 @@
     background-color: #0056b3;
   }
   
-  /* Input field styling */
   input[type="text"] {
     padding: 8px;
     margin: 5px;
@@ -70,9 +68,55 @@
     border-color: #007bff;
   }
   
-  /* Make the resizable component's content fill the available space */
   .resizable-content {
     flex-grow: 1;
     padding: 10px;
+  }
+  
+
+   .resizable-component {
+    position: relative;
+    border: 1px solid black;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .resizable-component > * {
+    box-sizing: border-box;
+  }
+  
+  .resizer {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: transparent;
+  }
+  
+  .resizer-tl {
+    top: -5px;
+    left: -5px;
+    cursor: nwse-resize;
+  }
+  
+  .resizer-tr {
+    top: -5px;
+    right: -5px;
+    cursor: nesw-resize;
+  }
+  
+  .resizer-bl {
+    bottom: -5px;
+    left: -5px;
+    cursor: nesw-resize;
+  }
+  
+  .resizer-br {
+    bottom: -5px;
+    right: -5px;
+    cursor: nwse-resize;
+  }
+  
+  .resizer-button {
+    margin: 5px;
   }
   

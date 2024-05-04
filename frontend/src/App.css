@@ -1,111 +1,158 @@
-/* App.css */
-
 .app {
-  max-width: 1200px; /* Fixing the maximum width of the window */
-  margin: 0 auto; /* Centering the app horizontally */
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh; 
   padding: 20px;
 }
 
 .components-container {
   display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .buttons-container {
+  flex: 1; 
   margin: 0 10px;
-}
-
-.count-container {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.count-container p {
-  margin: 5px;
-}
-
-.component-list {
-  margin-top: 20px;
-}
-
-.component-list h2 {
-  text-align: center;
-}
-
-.component-list ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.component-list li {
-  margin-bottom: 10px;
 }
 
 .resizable-component {
   position: relative;
-  width: 200px;
-  height: 150px;
-  max-width: 100%; /* Ensuring components don't exceed their container */
-  max-height: 100%;
-  background-color: #f0f0f0;
-  border: 1px solid #ccc;
-  margin: 10px;
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  overflow: hidden; /* Preventing content from overflowing */
-}
-
-.resizable-component input {
-  margin-top: 10px;
-  width: calc(100% - 20px); /* Adjusting input width to fit within component */
-  box-sizing: border-box; /* Including padding and border in input width */
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
 }
 
 .resizer {
+  position: absolute;
   width: 10px;
   height: 10px;
-  position: absolute;
-}
-
-.resizer-tl {
-  top: 0;
-  left: 0;
-  cursor: nwse-resize;
-}
-
-.resizer-tr {
-  top: 0;
-  right: 0;
-  cursor: nesw-resize;
-}
-
-.resizer-bl {
-  bottom: 0;
-  left: 0;
-  cursor: nesw-resize;
-}
-
-.resizer-br {
-  bottom: 0;
-  right: 0;
-  cursor: nwse-resize;
-}
-
-.resizer-button {
-  margin-top: 10px;
-  padding: 5px 10px;
   background-color: #007bff;
-  color: #fff;
-  border: none;
   cursor: pointer;
 }
 
-.resizer-button:hover {
-  background-color: #0056b3;
+.resizer-tl {
+  top: -5px;
+  left: -5px;
 }
+
+.resizer-tr {
+  top: -5px;
+  right: -5px;
+}
+
+.resizer-br {
+  bottom: -5px;
+  right: -5px;
+}
+
+.resizer-bl {
+  bottom: -5px;
+  left: -5px;
+}
+
+.count-container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+
+.buttons-container {
+  flex: 0 0 calc(33.33% - 20px); 
+  margin: 0 10px; 
+}
+
+@media screen and (max-width: 600px) {
+  .buttons-container {
+    flex: 0 0 calc(100% - 20px); 
+    margin: 0 0 20px;
+  }
+}
+
+
+
+ .Container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.TopRow {
+  flex: 0 0 auto;
+  text-align: center;
+}
+.BottomRow {
+  flex: 1 1 auto;
+}
+
+.Panel {
+  display: flex;
+  flex-direction: column;
+}
+
+.PanelContent {
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-panel-background);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.ResizeHandleOuter {
+  flex: 0 0 1.5em;
+  position: relative;
+  outline: none;
+  --background-color: transparent;
+}
+.ResizeHandleOuter[data-resize-handle-active] {
+  --background-color: var(--color-solid-resize-bar-handle);
+}
+
+.ResizeHandleInner {
+  position: absolute;
+  top: 0.25em;
+  bottom: 0.25em;
+  left: 0.25em;
+  right: 0.25em;
+  border-radius: 0.25em;
+  background-color: var(--background-color);
+  transition: background-color 0.2s linear;
+}
+
+.Button {
+  color: var(--color-default);
+  background-color: var(--color-button-background);
+  border: 1px solid var(--color-button-border);
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+.Button:hover {
+  background-color: var(--color-button-background-hover);
+}
+
+.Link {
+  display: block;
+  color: var(--color-link);
+  margin-bottom: 0.5rem;
+}
+
+.Icon {
+  width: 1em;
+  height: 1em;
+  position: absolute;
+  left: calc(50% - 0.5rem);
+  top: calc(50% - 0.5rem);
+}
+
+
+
+/* Rest of your CSS styles */
