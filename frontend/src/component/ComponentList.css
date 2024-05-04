@@ -1,0 +1,26 @@
+.component-list {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  .component-list-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .component-list-items {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .component-list-item {
+    margin-bottom: 10px;
+  }
+  
+  .component-id,
+  .component-name {
+    margin-right: 5px;
+  }
+  
