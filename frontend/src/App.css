@@ -1,38 +1,111 @@
-.App {
-  text-align: center;
-}
+/* App.css */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
+  max-width: 1200px; /* Fixing the maximum width of the window */
+  margin: 0 auto; /* Centering the app horizontally */
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 20px;
+}
+
+.components-container {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.buttons-container {
+  margin: 0 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.count-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.count-container p {
+  margin: 5px;
+}
+
+.component-list {
+  margin-top: 20px;
+}
+
+.component-list h2 {
+  text-align: center;
+}
+
+.component-list ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.component-list li {
+  margin-bottom: 10px;
+}
+
+.resizable-component {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  max-width: 100%; /* Ensuring components don't exceed their container */
+  max-height: 100%;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden; /* Preventing content from overflowing */
+}
+
+.resizable-component input {
+  margin-top: 10px;
+  width: calc(100% - 20px); /* Adjusting input width to fit within component */
+  box-sizing: border-box; /* Including padding and border in input width */
+}
+
+.resizer {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+}
+
+.resizer-tl {
+  top: 0;
+  left: 0;
+  cursor: nwse-resize;
+}
+
+.resizer-tr {
+  top: 0;
+  right: 0;
+  cursor: nesw-resize;
+}
+
+.resizer-bl {
+  bottom: 0;
+  left: 0;
+  cursor: nesw-resize;
+}
+
+.resizer-br {
+  bottom: 0;
+  right: 0;
+  cursor: nwse-resize;
+}
+
+.resizer-button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.resizer-button:hover {
+  background-color: #0056b3;
 }
